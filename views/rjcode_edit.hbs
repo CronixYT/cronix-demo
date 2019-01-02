@@ -1,0 +1,54 @@
+{{> header }}
+
+<body>
+
+    <header>
+        <div class="jumbotron j-1">
+            <div class="container">
+                <h1 class="display-4 mb-3">HVDB &mdash; Update</h1>
+                <a href="/" class="mybtn mybtn-full lead mr-3">Home</a>
+                <a href="/user/upload" class="mybtn mybtn-full lead mr-3">Upload</a>
+                <a href="/account/logout" class="mybtn mybtn-ghost lead mr-3">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        {{#if result}}
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="center"><img src="{{ result.image }}" alt="" class="img-fluid"></div>
+            </div>
+            <div class="col-lg-5">
+                <div class="center">
+                    <h1 class="display-4">{{ result.rjcode }}</h1>
+                    <form method="POST" class="mb-2">
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" name="url" id="url" value="{{ result.url }}">
+                        </div>
+                        <div class="form-check my-3">
+                            {{#if result.sfw}}
+                            <input type="checkbox" checked name="sfw" class="form-check-input" id="SFW">
+                            <label class="form-check-label" for="SFW">Is it SFW?</label>
+                            {{ else }}
+                            <input type="checkbox" name="sfw" class="form-check-input" id="SFW">
+                            <label class="form-check-label" for="SFW">Is it SFW?</label>
+                            {{/if}}
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Update</button>
+                    </form>
+                    <form method="POST" action="/rjcode/edit/delete/{{ result.rjcode }}">
+                        <div class="form-group"><button type="submit" class="btn btn-danger btn-block">Delete</button></div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        {{/if}}
+    </section>
+    {{> footer }}
+    <script type="text/javascript" src="/assets/javascripts/rjcode.js"></script>
+</body>
+
+</html>

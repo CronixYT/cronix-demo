@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HVDB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel='stylesheet' href='/assets/stylesheets/login.css' />
+</head>
+
+<body>
+    <section>
+        <div class="login-form-container">
+            <div class="login-box">
+                <h4>HVDB &mdash; Login </h4>
+                {{#if error_msg}}
+                <div class="text-right"><small class="text-danger">{{ error_msg }}</small></div>
+                {{/if}}
+                <form method="POST">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username...">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password...">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+                <div>
+                    <small>First time here? <a href="/account/register">Create your account.</a></small>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

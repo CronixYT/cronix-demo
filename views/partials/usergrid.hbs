@@ -1,0 +1,25 @@
+<section class="container main-grid">
+    <div class="row">
+        {{#each results as |result|}}
+        <div class="col-lg-4">
+            <div class="card h-100">
+                <div class="my-img">
+                    <img class="card-img-top img-fluid" src="{{ result.image }}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ result.rjcode }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+                <div class="m-3">{{#if sfw}}
+                    <small class="text-primary">SFW</small>
+                    {{ else }}
+                    <small class="text-danger">NSFW</small>
+                    {{/if}}</div>
+                <div class="m-2"><a href="#" class="btn btn-primary btn-block">Click Here</a></div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</section>

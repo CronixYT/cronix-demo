@@ -1,0 +1,18 @@
+{{> header }}
+
+<body>
+    <header>
+        <div class="jumbotron j-1">
+            <div class="container">
+                <h1 class="display-4 mb-3">HVDB &mdash; Welcome, {{ user.username }}</h1>
+                <a href="/about" class="mybtn mybtn-full lead mr-3">About</a>
+                <a href="/user/upload" class="mybtn mybtn-full lead mr-3">Upload</a>
+                <a href="/account/logout" class="mybtn mybtn-ghost lead mr-3">Logout</a>
+            </div>
+        </div>
+    </header>
+    {{> usergrid }}
+    {{> footer }}
+</body>
+
+</html>

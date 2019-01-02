@@ -1,0 +1,44 @@
+{{> header }}
+
+<body>
+
+    <header>
+        <div class="jumbotron j-1">
+            <div class="container">
+                <h1 class="display-4 mb-3">HVDB &mdash; Voice Collection</h1>
+                <a href="/" class="mybtn mybtn-full lead mr-3">Home</a>
+                <a href="/user/upload" class="mybtn mybtn-full lead mr-3">Upload</a>
+                <a href="/account/logout" class="mybtn mybtn-ghost lead mr-3">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        {{#if result}}
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="center"><img src="{{ result.image }}" alt="" class="img-fluid"></div>
+            </div>
+            <div class="col-lg-5">
+                <div class="center">
+                    <h1 class="display-4">{{ result.rjcode }}</h1>
+                    {{#if result.sfw}}
+                    <p class="lead text-primary">SFW</p>
+                    {{else }}
+                    <p class="lead text-danger">NSFW</p>
+                    {{/if}}
+                    <button class="btn btn-primary btn-block" onclick="getUrl('{{ result.url }}')" id="download-btn">Copy
+                        Download Link</button>
+                    <div class="text-right m-3"><small><a class="text-secondary" href="/rjcode/edit/{{ result.rjcode
+                    }}">Edit</a></small></div>
+                </div>
+            </div>
+
+        </div>
+        {{/if}}
+    </section>
+    {{> footer }}
+    <script type="text/javascript" src="/assets/javascripts/rjcode.js"></script>
+</body>
+
+</html>

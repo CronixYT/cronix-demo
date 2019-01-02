@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 155px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+section {
+  margin: 70px auto;
+}
+
+ul {
+  list-style: none;
+}
+
+[class*="col-"] {
+  margin-bottom: 20px;
+}
+
+/* Reusable Components */
+
+.btn {
+  padding: 0.3em 1.5em;
+  border-radius: 10px;
+  border: 1px solid #2980b9;
+  background-color: #2980b9;
+}
+
+.btn:hover {
+  background-color: #236c9c;
+  border: 1px solid #236c9c;
+}
+
+.my-font {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.7px;
+}
+
+.mybtn {
+  display: inline-block;
+  padding: 0.2em 1.5em;
+  border-radius: 10px;
+  border: 1px solid #2980b9;
+}
+
+.mybtn-full {
+  background-color: #2980b9;
+  border: 1px solid #2980b9;
+  color: white;
+  transition: background-color 0.25s ease, border 0.25s ease;
+}
+
+.mybtn-full:hover {
+  color: inherit;
+  background-color: #236c9c;
+  border: 1px solid #236c9c;
+  transition: background-color 0.25s ease, border 0.25s ease;
+}
+
+.mybtn-ghost {
+  border: 1px solid #2980b9;
+  color: #2980b9;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.mybtn-ghost:hover {
+  color: white;
+  background-color: #2980b9;
+  border: 1px solid #2980b9;
+  transition: background-color 0.25s ease, border 0.25s ease;
+}
+
+#github,
+#youtube {
+  transition: color 0.2s ease;
+}
+
+#github:hover {
+  color: #4078c0;
+  transition: color 0.2s ease;
+}
+
+#youtube:hover {
+  color: #c4302b;
+  transition: color 0.2s ease;
+}
+
+/* Header */
+
+.jumbotron {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.j-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../images/bg.jpg");
+  background-size: cover;
+  color: white;
+}
+
+/* Footer */
+
+footer {
+  color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.footer-container {
+  padding: 2em;
+  margin: auto;
+  background-color: #333;
+}
+
+.footer-main {
+  text-align: center;
+  margin: auto;
+  max-width: 1140px;
+}
+
+.footer-main p {
+  margin: 0;
+  font-size: 90%;
+  letter-spacing: 0.7px;
+}
+
+.footer-list,
+.footer-list a {
+  color: white;
+  font-size: 150%;
+}
+
+.footer-list li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+/* Testing */
+
+.height {
+  height: 500px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.btn-file,
+.btn-file:hover {
+  color: white;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.hiddenForm {
+  display: none;
+}
+
+.btn-danger {
+  background-color: rgb(199, 72, 72) !important;
+  border: rgb(199, 72, 72) !important;
+}

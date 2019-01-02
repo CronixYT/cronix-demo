@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HVDB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel='stylesheet' href='/assets/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron j-1">
+            <div class="container">
+                <h1 class="display-4 mb-3">HVDB &mdash; Upload</h1>
+                <a href="/" class="mybtn mybtn-full lead mr-3">Home</a>
+                <a href="/about" class="mybtn mybtn-full lead mr-3">About</a>
+                <a href="/account/logout" class="mybtn mybtn-ghost lead mr-3">Logout</a>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Form -->
+                <h1 class="my-font text-center">Upload</h1>
+                {{#if success_msg }}
+                <div class="alert alert-success text-center">
+                    {{success_msg}}
+                </div>
+                {{/if}}
+                {{#if errors}}
+                {{#each errors as |error|}}
+                <div class="alert alert-danger">
+                    {{ error.msg }}
+                </div>
+                {{/each}}
+                {{/if}}
+                <form method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <div class="form-group">
+                        <label for="rjcode">RJCode</label>
+                        <input type="number" class="form-control" name="rjcode" id="rjcode" placeholder="Enter code...">
+                        <small class="form-text text-muted">Usually 4-6 Numbers</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Download URL</label>
+                        <input type="url" class="form-control" name="url" id="url" placeholder="Enter url...">
+                        <small class="form-text text-muted">Recommended : Mega, GoogleDrive</small>
+                    </div>
+                    <div>
+                        <label class="form-text text-muted">Upload Image (Not Required)</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="btn btn-default btn-file">
+                            Browse <input type="file" name="image" id="file-upload">
+                        </label>
+                        <label id="file-name"></label>
+                    </div>
+                    <div class="form-check my-3">
+                        <input type="checkbox" name="sfw" class="form-check-input" id="SFW">
+                        <label class="form-check-label" for="SFW">Is it SFW?</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Upload</button>
+                </form>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h1 class="my-font">HVDB <br /> Voice Collection</h1>
+                <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero ullam
+                    recusandae, aperiam
+                    ratione,
+                    eos molestias, eum nobis alias porro perferendis consequatur natus neque dolores eius sunt!
+                    Fugit
+                    nihil id velit.</p>
+            </div>
+        </div>
+    </section>
+    {{> footer }}
+    <script type="text/javascript" src="/assets/javascripts/upload.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{{> header }}
+
+<body>
+    <header>
+        <div class="jumbotron j-1">
+            <div class="container">
+                <h1 class="display-4 mb-3">HVDB &mdash; Sign Up</h1>
+                <a href="/" class="mybtn mybtn-ghost lead">Home</a>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4 text-right">
+                <h1 class="my-font">HVDB <br /> Voice Collection</h1>
+                <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero ullam
+                    recusandae, aperiam
+                    ratione,
+                    eos molestias, eum nobis alias porro perferendis consequatur natus neque dolores eius sunt!
+                    Fugit
+                    nihil id velit.</p>
+                <p>Already have an account? <a href="/account/login">Login</a> here!</p>
+            </div>
+            <div class="col-lg-8">
+                <!-- Form -->
+                <h1 class="my-font text-center">Sign Up</h1>
+                {{#if success_msg}}
+                <div class="alert alert-success text-center">
+                    Congratulations! You can Login now.
+                </div>
+                {{/if}}
+                {{#if errors}}
+                {{#each errors as |error|}}
+                <div class="alert alert-danger">
+                    {{ error.msg }}
+                </div>
+                {{/each}}
+                {{/if}}
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username...">
+                        <small class="form-text text-muted">Min. 4 Characters</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email...">
+                        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password...">
+                        <small class="form-text text-muted">Min. 6 Characters</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpassword">Confirm Password</label>
+                        <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm password...">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {{> footer }}
+</body>
+
+</html>
